@@ -7,9 +7,9 @@ class colorScreen extends Component{
     };
    
     showColorBoxes=()=>{
-        let colorBox=this.state.colors.map((el)=>{
+        let colorBox=this.state.colors.map((el,ind)=>{
             return (
-               <ColorBox color={el}/>
+               <ColorBox color={el} key={ind*2}/>
             )
         })
         return colorBox;

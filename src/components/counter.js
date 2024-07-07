@@ -1,44 +1,50 @@
-import { Component } from "react";
+import { useState } from "react";
 
-class counter extends Component{
-state={
-    mul:6,
+const Counter=(props)=>{
+    const [state,setState]=useState({count:0})
+
+  const  increaseCount=()=>{
+    setState({count: state.count+1});
+       };
+   const  decreaseCount=()=>{
+    if(state.count>1)
+    setState({count: state.count-2});
+    else setState({count:0})
 };
-// increaseCount=()=>{
-//     this.setState({count: this.state.count+1});
-// }
-// decreaseCount=()=>{
-//     if(this.state.count>1)
-//     this.setState({count: this.state.count-2});
-//     else this.setState({count:0})
-// }
-render=()=>{
     return(
         <>
-        <h1>This count is: {this.state.mul}</h1>
-        {/* <button onClick={this.increaseCount}>Increase</button>
-        <button onClick={this.decreaseCount}>Decrease</button> */}
-        {/* <button onClick={ ()=>{
-            let mul=this.state.mul;
-            mul=this.props.btnonClick1(mul);
-            this.setState({mul});
+        <h1>This count is: {state.count}</h1>
+        <button onClick={increaseCount}>Increase</button>
+        <button onClick={decreaseCount}>Decrease</button> 
+         <button onClick={ ()=>{
+            let count=state.count;
+            count=props.btnonClick1(count);
+            setState({count});
         }}>
-            {this.props.text}
-        </button> */}
+            {props.text1}
+        </button>
         <button onClick={()=>{
-            let mul=this.state.mul;
-            mul=this.props.btnonClick2(mul);
-            this.setState({mul});
+            let count=state.count;
+            count=props.btnonClick2(count);
+            setState({count});
         }}>
-            {this.props.text2}
+            {props.text2}
             
         </button>
         <button onClick={()=>{
-            let mul=this.state.mul;
-            mul=this.props.btnonClick1(mul);
-            this.setState({mul});
+            let count=state.count;
+            count=props.btnonClick3(count);
+            setState({count});
         }}>
-            {this.props.text1}
+            {props.text3}
+            </button>
+
+            <button onClick={()=>{
+            let count=state.count;
+            count=props.btnonClick4(count);
+            setState({count});
+        }}>
+            {props.text4}
             </button>
 
 
@@ -46,5 +52,5 @@ render=()=>{
         </>
     )
 }
-}
-export default counter
+
+export default Counter

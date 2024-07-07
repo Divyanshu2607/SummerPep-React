@@ -1,18 +1,31 @@
-import {Component} from "react";
+
 import './App.css';
 import Counter from "./components/counter";
 import ColorScreen from "./components/colorScreen";
-class App extends Component{
-  render=()=> {
-    return(
-      <>
-      <ColorScreen/>
-      </>
-    ) 
-   
-   
+
+const App=()=>{
+  return(
+    <>
+    <ColorScreen/>
+    <Counter text1="multiply" text2="divide" text3="square" text4="squareroot" btnonClick1={(mul)=>{
+      return 2*mul;
+    }} btnonClick2={(divide)=>{
+        return divide/2;
+    }}
+    btnonClick3={(num)=>{
+      return num*num;
+    }}
+    btnonClick4={(num)=>{
+      if(Math.sqrt(num)<1)return 1;
+      return  Math.sqrt(num);
+    }}
+    /> 
+    </>
+  ) 
+ 
+ 
 }
-}
+
 
 export default App;
 
@@ -35,19 +48,7 @@ export default App;
     //    )
    
 
- {/* <Counter text1="multiply" text2="divide" btnonClick1={(mul)=>{
-        return 2*mul;
-      }} btnonClick2={(divide)=>{
-          return divide/2;
-      }}/> */}
-      {/* <Counter text1="sqaure"  text2="square root" 
-      btnonClick1={(num)=>{
-        return num*num;
-      }}
-       btnonClick2={(num)=>{
-        if(Math.sqrt(num)<1)return 1;
-        return  Math.sqrt(num);
-      }} /> */}
+  
 
 
 // <div className="Sabsaibada">
