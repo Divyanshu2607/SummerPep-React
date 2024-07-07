@@ -1,26 +1,26 @@
-import { Component } from "react";
-
-class ColorBox extends Component{
-    componentDidMount=()=>{
-        console.log("ColorBox is created ")
-    }
-    componentWillUnmount=()=>{
-        console.log("ColorBox get deleted")
-    }
-    render=()=>{
-        return(
-            <>
-             <div 
-                style={
-                    {background:this.props.color ,
-                    height:'100px',
-                    width:'100px',
-                    margin:'5px'}
-                    }>
-                </div>
-            </>
+import { useEffect } from "react"
+const ColorBox=(props)=>{
+    useEffect(()=>{
+        console.log("Color Box is created")
+        return (
+            ()=>{
+            console.log("Color Box is removed")
+            }
         )
-    }
+    },[])
+    return(
+        <>
+         <div 
+            style={
+                {background:props.color ,
+                height:'100px',
+                width:'100px',
+                margin:'5px'}
+                }>
+            </div>
+        </>
+    )
 }
+
 
 export default ColorBox;
