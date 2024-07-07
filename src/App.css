@@ -1,0 +1,53 @@
+/* 
+
+.parent {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+.Sabsaibada {
+  height: 400px; 
+  width: 90%; 
+  border: 2px solid black;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  
+}
+
+.first, .second, .third {
+  flex: 1;
+  margin: 0 10px;
+  border: 1px solid #000;
+  padding: 20px;
+  text-align: center;
+  background-color: #f0f0f0;
+} */
+
+/* .comp{
+ 
+  border:2px solid black;
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+.baharVala{
+  padding-top: 5%;
+  margin-top: 5%;
+  height:1000px;
+  border:2px solid black;
+} */
+
+.myContainer {
+  margin: auto;
+}
+
+.myContainer > div {
+  /* height: 40px; */
+  margin: auto;
+  padding: 20px;
+  border: 1px solid black;
+  margin-bottom: 3vh;
+}
