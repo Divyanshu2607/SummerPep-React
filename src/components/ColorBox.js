@@ -17,7 +17,9 @@ const ColorBox=(props)=>{
                 width:'100px',
                 margin:'5px'}
                 }>
+                    <button onClick={props.onButtonClick}>Click Me</button>
             </div>
+            
         </>
     )
 }

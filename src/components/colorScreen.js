@@ -4,13 +4,18 @@ import { useState } from "react";
 import { useEffect } from "react";
 const ColorScreen=()=>{
   const [state,setState]=useState({colors:[]})
+  const [headerInfo,setHeaderInfo]=useState({color:'black' ,boxClicked:null})
   useEffect(()=>{
     console.log("Color Screen is updated")
   })
    const showColorBoxes=()=>{
         let colorBox=state.colors.map((el,ind)=>{
             return (
-               <ColorBox color={el} key={ind*2}/>
+               <ColorBox color={el} key={ind}
+                onButtonClick={()=>{
+                onButtonClick(el,ind+1)
+               }}
+               />
             )
         })
         return colorBox;
@@ -18,6 +23,9 @@ const ColorScreen=()=>{
    const  handleClick=()=>{
         const newColor=generateColor();
         setState({colors:[...state.colors,newColor]});
+    }
+    const onButtonClick=(color,boxNumber)=>{
+        setHeaderInfo({color:color,boxClicked:boxNumber})
     }
   const   generateColor=()=>{
         return `rgb(${generateRandom()},${generateRandom()},${generateRandom()})`;
@@ -27,7 +35,12 @@ const ColorScreen=()=>{
     }
     return(
         <>
-        <h1>Color:{state.colors.length}</h1>
+        <h1 style={{color:headerInfo.color
+        }}>Color:{state.colors.length} &nbsp;
+        {headerInfo.boxClicked && <span style={{fontSize:'1rem'}}>
+            boxClicked:{headerInfo.boxClicked}
+            </span>}
+        </h1>
         <button 
         style={
             {
