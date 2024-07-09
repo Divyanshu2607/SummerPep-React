@@ -2,7 +2,8 @@
 import './App.css';
 import Counter from "./components/counter";
 import ColorScreen from "./components/colorScreen";
-
+import Cart from "./screen/Cart"
+import LoginForm from './screen/loginForm';
 const App=()=>{
   return(
     <>
@@ -20,6 +21,8 @@ const App=()=>{
       return  Math.sqrt(num);
     }}
     /> 
+    <Cart/>
+    <LoginForm/>
     </>
   ) 
  

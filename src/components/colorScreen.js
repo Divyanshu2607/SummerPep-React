@@ -36,7 +36,7 @@ const ColorScreen=()=>{
     return(
         <>
         <h1 style={{color:headerInfo.color
-        }}>Color:{state.colors.length} &nbsp;
+        }}>Color:{state.colors.length} &nbsp;//for space
         {headerInfo.boxClicked && <span style={{fontSize:'1rem'}}>
             boxClicked:{headerInfo.boxClicked}
             </span>}
